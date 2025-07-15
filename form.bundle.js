@@ -696,7 +696,7 @@
     for (var k in styles) el.style[k] = styles[k];
   };
 
-  // ---------------------------------------------------
+    // ---------------------------------------------------
   // 4) EXPÕE GLOBAL E AUTO-INIT COM RETRY
   // ---------------------------------------------------
   window.FormCreator = FormCreator;
@@ -707,14 +707,15 @@
     attempts++;
     if (window.FormCreator && window.FormCreatorConfig){
       console.info('[FormCreator v'+VERSION+'] init attempt '+attempts);
-      try {
-        new FormCreator(window.FormCreatorConfig).init();
-        console.info('[FormCreator v'+VERSION+'] initialized successfully');
-      } catch(err){
-        console.error('[FormCreator v'+VERSION+'] init error', err);
-        if (attempts < MAX_RETRIES) setTimeout(tryInit, BASE_DELAY * attempts);
-        else console.error('[FormCreator v'+VERSION+'] giving up after '+attempts+' attempts');
-      }
+      // Para cada form no config, inicializa separadamente:
+      Object.keys(window.FormCreatorConfig).forEach(function(name){
+        try {
+          new FormCreator(window.FormCreatorConfig[name]).init();
+          console.info('[FormCreator v'+VERSION+'] initialized "'+name+'"');
+        } catch(err){
+          console.error('[FormCreator v'+VERSION+'] init error for "'+name+'"', err);
+        }
+      });
     } else {
       console.warn('[FormCreator v'+VERSION+'] config missing, retry #'+attempts);
       if (attempts < MAX_RETRIES) setTimeout(tryInit, BASE_DELAY * attempts);
