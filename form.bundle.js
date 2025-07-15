@@ -2,11 +2,11 @@
   'use strict';
 
   // ---------------------------------------------------
-  // 1) “ESTÁTICAS” FORA DA “CLASSE”
+  // 1) â€œESTÃTICASâ€ FORA DA CLASSE
   // ---------------------------------------------------
   var VERSION = '1.4.50@leonardoscapinello.com';
 
-  // CSS padrão a injetar
+  // CSS padrÃ£o a injetar
   var defaultCSS = `
     .form-navigation { display: flex; gap: 8px; }
     .button-wrapper { flex: 1; }
@@ -44,7 +44,7 @@
     .fc-label { display: none !important; }
   `;
 
-  // JSON completo de máscaras
+  // JSON completo de mÃ¡scaras
   var defaultPhoneMasks = [
     { "code": "+7",   "country": "Rússia",                   "flag": "🇷🇺", "mask": "(000) 000-00-00" },
     { "code": "+7",   "country": "Cazaquistão",             "flag": "🇰🇿", "mask": "(000) 000-00-00" },
@@ -292,11 +292,12 @@
   }
 
   // ---------------------------------------------------
-  // 2) “CLASSE” E MÉTODOS
+  // 2) CLASSE E MÃ‰TODOS
   // ---------------------------------------------------
-  function FormCreator(config){
+  function FormCreator(config, container){
     injectCSS();
     this.config = config;
+    this.container = container;
     this.pages = [];
     this.currentPage = 0;
     this.landingTime = new Date().toISOString();
@@ -304,15 +305,14 @@
     this.submitTime = null;
     this.trackingParams = this._extractTrackingParams();
     this.maskList = defaultPhoneMasks;
-    console.debug('[FormCreator v'+VERSION+'] instance created');
+    console.debug('[FormCreator v'+VERSION+'] instance for "'+ (container.dataset['framerName']||'<inline>') +'" created');
   }
 
   FormCreator.prototype.init = function(){
-    try{
+    try {
       this._preparePages();
-      this._initialRender();
-      this._observeContainers();
-      console.info('[FormCreator v'+VERSION+'] initialized');
+      this._renderForm();
+      console.info('[FormCreator v'+VERSION+'] initialized for container', this.container);
     } catch(err){
       console.error('[FormCreator v'+VERSION+'] init error', err);
       throw err;
@@ -328,48 +328,13 @@
         this.pages.push(this.config.fields.slice(i, i+per));
       }
     } else {
-      throw new Error('FormCreator: config.pages ou config.fields obrigatório');
+      throw new Error('FormCreator: config.pages ou config.fields obrigatÃ³rio');
     }
     console.debug('[FormCreator v'+VERSION+'] pages prepared ('+this.pages.length+')');
   };
 
-  FormCreator.prototype._initialRender = function(){
-    var els = document.querySelectorAll('[data-framer-name="FormCreator"]');
-    for (var i=0; i<els.length; i++){
-      this._maybeRender(els[i]);
-    }
-  };
-
-  FormCreator.prototype._observeContainers = function(){
-    var self = this;
-    var mo = new MutationObserver(function(muts){
-      muts.forEach(function(m){
-        m.addedNodes.forEach(function(n){
-          if (n.nodeType===1){
-            if (n.matches('[data-framer-name="FormCreator"]')) self._maybeRender(n);
-            var inner = n.querySelectorAll('[data-framer-name="FormCreator"]');
-            for (var j=0; j<inner.length; j++) self._maybeRender(inner[j]);
-          }
-        });
-      });
-    });
-    mo.observe(document.body, { childList:true, subtree:true });
-    console.debug('[FormCreator v'+VERSION+'] MutationObserver set');
-  };
-
-  FormCreator.prototype._maybeRender = function(container){
-    if (!container.dataset.fcInitialized){
-      try {
-        this._renderForm(container);
-        container.dataset.fcInitialized = '1';
-        console.debug('[FormCreator v'+VERSION+'] rendered container');
-      } catch(err){
-        console.error('[FormCreator v'+VERSION+'] render error', err);
-      }
-    }
-  };
-
-  FormCreator.prototype._renderForm = function(container){
+  FormCreator.prototype._renderForm = function(){
+    var container = this.container;
     container.innerHTML = '';
     var wrap = document.createElement('div');
     wrap.className = (this.config.styles && this.config.styles.wrapperClass) || 'form-wrapper';
@@ -391,7 +356,7 @@
     this.overlay = document.createElement('div');
     this.overlay.className = (this.config.overlay && this.config.overlay.className) || 'fc-loading-overlay';
     var os = (this.config.overlay && this.config.overlay.styles) || {};
-    for (var k in os) this.overlay.style[k] = os[k];
+    for (var k in os) if (os.hasOwnProperty(k)) this.overlay.style[k] = os[k];
     parent.appendChild(this.overlay);
   };
 
@@ -419,7 +384,7 @@
     }.bind(this));
     this.form.appendChild(pw);
 
-    // navegação
+    // navegaÃ§Ã£o
     var nav = document.createElement('div');
     nav.className = (this.config.styles && this.config.styles.navWrapperClass) || 'form-navigation';
     var bt = this.config.buttonText || {};
@@ -432,7 +397,7 @@
       nav.appendChild(prev);
     }
     if (idx<this.pages.length-1){
-      var next = this._button(bt.next||'Próximo','button',(this.config.styles&&this.config.styles.nextButtonClass));
+      var next = this._button(bt.next||'PrÃ³ximo','button',(this.config.styles&&this.config.styles.nextButtonClass));
       next.addEventListener('click', function(e){
         e.preventDefault(); this._renderPage(idx+1);
       }.bind(this));
@@ -469,10 +434,17 @@
         opt0.value=''; opt0.textContent=''; opt0.selected=true;
         sel.appendChild(opt0);
       }
-      this.maskList.forEach(function(it){
+      // novo: clonamos e ordenamos por país em PT-BR
+      var sortedList = this.maskList
+        .slice() // evita mexer no original
+        .sort(function(a, b){
+          return a.country.localeCompare(b.country, 'pt');
+        });
+
+      sortedList.forEach(function(it){
         var o = document.createElement('option');
         o.value = it.code.replace('+','');
-        o.textContent = it.flag+' '+it.country;
+        o.textContent = it.country;      
         o.dataset.mask = it.mask;
         sel.appendChild(o);
       });
@@ -596,15 +568,12 @@
     return out;
   };
 
-  // ---------------------------------------------------
-  // 3) _handleSubmit COM DUPLICAÇÃO E FIXES
-  // ---------------------------------------------------
   FormCreator.prototype._handleSubmit = async function(e){
     e.preventDefault();
     this.submitTime = new Date().toISOString();
     this._submitTimeField.value = this.submitTime;
 
-    // validações de telefone
+    // validaÃ§Ãµes de telefone
     var phoneFields = [];
     this.pages.forEach(function(pg){
       pg.forEach(function(f){
@@ -632,15 +601,12 @@
       var digits = val.replace(/\D/g,'');
       if (!digits.startsWith(ddi)) digits = ddi + digits;
       var full = '+' + digits;
-      // 1) phone: +DDI+DDD+número
       rawData[f.id] = full;
-      // 2) phoneac: só o DDD
       var inpEl = this.form.querySelector('[name="'+f.id+'"]');
       var maskPat = inpEl.dataset.mask||'';
       var acLen = (maskPat.match(/0+/)||[''])[0].length;
-      var local = digits.slice(ddi.length);       // DDD + número
-      rawData.phoneac = local.slice(0, acLen);   // só DDD
-      // 3) phonenumber: só o número (sem DDI e sem DDD)
+      var local = digits.slice(ddi.length);
+      rawData.phoneac = local.slice(0, acLen);
       rawData.phonenumber = local.slice(acLen);
       delete rawData[f.id+'_ddi'];
     }.bind(this));
@@ -653,7 +619,6 @@
     queryData[this.config.timeParamName||'fill_start_time'] = this.fillTime;
     queryData.submit_time = this.submitTime;
 
-    // utilitário “?” vs “&”
     function withParams(url, qs){
       return url + (url.indexOf('?') >= 0 ? '&' : '?') + qs;
     }
@@ -693,33 +658,58 @@
   };
 
   FormCreator.prototype._applyStyles = function(el, styles){
-    for (var k in styles) el.style[k] = styles[k];
+    for (var k in styles) if (styles.hasOwnProperty(k)) el.style[k] = styles[k];
   };
 
-    // ---------------------------------------------------
-  // 4) EXPÕE GLOBAL E AUTO-INIT COM RETRY
+  // ---------------------------------------------------
+  // 3) GLOBAL BOOTSTRAP PARA MÃšLTIPLAS INSTÃ‚NCIAS
   // ---------------------------------------------------
   window.FormCreator = FormCreator;
-  console.info('[FormCreator] loaded v'+VERSION);
 
   var MAX_RETRIES = 5, BASE_DELAY = 500, attempts = 0;
-  function tryInit(){
-    attempts++;
-    if (window.FormCreator && window.FormCreatorConfig){
-      console.info('[FormCreator v'+VERSION+'] init attempt '+attempts);
-      // Para cada form no config, inicializa separadamente:
-      Object.keys(window.FormCreatorConfig).forEach(function(name){
-        try {
-          new FormCreator(window.FormCreatorConfig[name]).init();
-          console.info('[FormCreator v'+VERSION+'] initialized "'+name+'"');
-        } catch(err){
-          console.error('[FormCreator v'+VERSION+'] init error for "'+name+'"', err);
+  function initializeAllForms(){
+    if (!window.FormCreatorConfig) return false;
+    var cfgRoot = window.FormCreatorConfig;
+    for (var name in cfgRoot){
+      if (!cfgRoot.hasOwnProperty(name)) continue;
+      var cfg = cfgRoot[name];
+      var selector = '[data-framer-name="'+name+'"]';
+      var els = document.querySelectorAll(selector);
+      els.forEach(function(el){
+        if (!el.dataset.fcInitialized){
+          try {
+            new FormCreator(cfg, el).init();
+            el.dataset.fcInitialized = '1';
+          } catch(err){
+            console.error('[FormCreator] init error for "'+name+'"', err);
+          }
         }
       });
-    } else {
+    }
+    return true;
+  }
+
+  function tryInit(){
+    attempts++;
+    if (initializeAllForms()){
+      console.info('[FormCreator v'+VERSION+'] initialized all forms');
+      // MutationObserver para novos containers dinÃ¢micos
+      var mo = new MutationObserver(function(muts){
+        muts.forEach(function(m){
+          m.addedNodes.forEach(function(n){
+            if (n.nodeType===1){
+              initializeAllForms();
+            }
+          });
+        });
+      });
+      mo.observe(document.body, { childList:true, subtree:true });
+      console.debug('[FormCreator v'+VERSION+'] MutationObserver set');
+    } else if (attempts < MAX_RETRIES){
       console.warn('[FormCreator v'+VERSION+'] config missing, retry #'+attempts);
-      if (attempts < MAX_RETRIES) setTimeout(tryInit, BASE_DELAY * attempts);
-      else console.error('[FormCreator v'+VERSION+'] config never found');
+      setTimeout(tryInit, BASE_DELAY * attempts);
+    } else {
+      console.error('[FormCreator v'+VERSION+'] giving up after '+attempts+' attempts');
     }
   }
 
