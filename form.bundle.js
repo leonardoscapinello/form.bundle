@@ -2,11 +2,11 @@
   'use strict';
 
   // ---------------------------------------------------
-  // 1) â€œESTÃTICASâ€ FORA DA CLASSE
+  // 1) “ESTÁTICAS” FORA DA “CLASSE”
   // ---------------------------------------------------
   var VERSION = '1.4.50@leonardoscapinello.com';
 
-  // CSS padrÃ£o a injetar
+  // CSS padrão a injetar
   var defaultCSS = `
     .form-navigation { display: flex; gap: 8px; }
     .button-wrapper { flex: 1; }
@@ -44,7 +44,7 @@
     .fc-label { display: none !important; }
   `;
 
-  // JSON completo de mÃ¡scaras
+  // JSON completo de máscaras
   var defaultPhoneMasks = [
     { "code": "+7",   "country": "Rússia",                   "flag": "🇷🇺", "mask": "(000) 000-00-00" },
     { "code": "+7",   "country": "Cazaquistão",             "flag": "🇰🇿", "mask": "(000) 000-00-00" },
@@ -110,175 +110,175 @@
     { "code": "+995", "country": "Geórgia",                  "flag": "🇬🇪", "mask": "000 000 000" },
     { "code": "+996", "country": "Quirguistão",              "flag": "🇰🇬", "mask": "000 000 000" },
     { "code": "+998", "country": "Uzbequistão",              "flag": "🇺🇿", "mask": "000 000 000" },
-    { "code": "+1", "country": "Estados Unidos", "flag": "ðŸ‡ºðŸ‡¸", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "CanadÃ¡", "flag": "ðŸ‡¨ðŸ‡¦", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Anguila", "flag": "ðŸ‡¦ðŸ‡®", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "AntÃ­gua e Barbuda", "flag": "ðŸ‡¦ðŸ‡¬", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Bahamas", "flag": "ðŸ‡§ðŸ‡¸", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Barbados", "flag": "ðŸ‡§ðŸ‡§", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Bermudas", "flag": "ðŸ‡§ðŸ‡²", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Dominica", "flag": "ðŸ‡©ðŸ‡²", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Granada", "flag": "ðŸ‡¬ðŸ‡©", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Guam", "flag": "ðŸ‡¬ðŸ‡º", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Ilhas CaimÃ£", "flag": "ðŸ‡°ðŸ‡¾", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Ilhas Marianas do Norte", "flag": "ðŸ‡²ðŸ‡µ", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Ilhas Virgens Americanas", "flag": "ðŸ‡»ðŸ‡®", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Ilhas Virgens BritÃ¢nicas", "flag": "ðŸ‡»ðŸ‡¬", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Jamaica", "flag": "ðŸ‡¯ðŸ‡²", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Monserrate", "flag": "ðŸ‡²ðŸ‡¸", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Porto Rico", "flag": "ðŸ‡µðŸ‡·", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "RepÃºblica Dominicana", "flag": "ðŸ‡©ðŸ‡´", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Samoa Americana", "flag": "ðŸ‡¦ðŸ‡¸", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Santa LÃºcia", "flag": "ðŸ‡±ðŸ‡¨", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "SÃ£o CristÃ³vÃ£o e Neves", "flag": "ðŸ‡°ðŸ‡³", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "SÃ£o Martinho", "flag": "SM", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "SÃ£o Vicente e Granadinas", "flag": "ðŸ‡»ðŸ‡¨", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Trindade e Tobago", "flag": "ðŸ‡¹ðŸ‡¹", "mask": "(000) 000-0000" },
-    { "code": "+1", "country": "Turcas e Caicos", "flag": "ðŸ‡¹ðŸ‡¨", "mask": "(000) 000-0000" },
-    { "code": "+20", "country": "Egito", "flag": "ðŸ‡ªðŸ‡¬", "mask": "0000 000 000" },
-    { "code": "+211", "country": "SudÃ£o do Sul", "flag": "ðŸ‡¸ðŸ‡¸", "mask": "000 000 000" },
-    { "code": "+212", "country": "Marrocos", "flag": "ðŸ‡²ðŸ‡¦", "mask": "0000-000000" },
+    { "code": "+1", "country": "Estados Unidos", "flag": "🇺🇸", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Canadá", "flag": "🇨🇦", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Anguila", "flag": "🇦🇮", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Antígua e Barbuda", "flag": "🇦🇬", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Bahamas", "flag": "🇧🇸", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Barbados", "flag": "🇧🇧", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Bermudas", "flag": "🇧🇲", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Dominica", "flag": "🇩🇲", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Granada", "flag": "🇬🇩", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Guam", "flag": "🇬🇺", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Ilhas Caimã", "flag": "🇰🇾", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Ilhas Marianas do Norte", "flag": "🇲🇵", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Ilhas Virgens Americanas", "flag": "🇻🇮", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Ilhas Virgens Britânicas", "flag": "🇻🇬", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Jamaica", "flag": "🇯🇲", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Monserrate", "flag": "🇲🇸", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Porto Rico", "flag": "🇵🇷", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "República Dominicana", "flag": "🇩🇴", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Samoa Americana", "flag": "🇦🇸", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Santa Lúcia", "flag": "🇱🇨", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "São Cristóvão e Neves", "flag": "🇰🇳", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "São Martinho", "flag": "SM", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "São Vicente e Granadinas", "flag": "🇻🇨", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Trindade e Tobago", "flag": "🇹🇹", "mask": "(000) 000-0000" },
+    { "code": "+1", "country": "Turcas e Caicos", "flag": "🇹🇨", "mask": "(000) 000-0000" },
+    { "code": "+20", "country": "Egito", "flag": "🇪🇬", "mask": "0000 000 000" },
+    { "code": "+211", "country": "Sudão do Sul", "flag": "🇸🇸", "mask": "000 000 000" },
+    { "code": "+212", "country": "Marrocos", "flag": "🇲🇦", "mask": "0000-000000" },
     { "code": "+212", "country": "Saara Ocidental", "flag": "EH", "mask": "0000-000000" },
-    { "code": "+213", "country": "ArgÃ©lia", "flag": "ðŸ‡©ðŸ‡¿", "mask": "000 00 00 00" },
-    { "code": "+216", "country": "TunÃ­sia", "flag": "ðŸ‡¹ðŸ‡³", "mask": "00 000 000" },
-    { "code": "+218", "country": "LÃ­bia", "flag": "ðŸ‡±ðŸ‡¾", "mask": "000 000 0000" },
-    { "code": "+220", "country": "GÃ¢mbia", "flag": "ðŸ‡¬ðŸ‡²", "mask": "000 000 000" },
-    { "code": "+221", "country": "Senegal", "flag": "ðŸ‡¸ðŸ‡³", "mask": "000 000 000" },
-    { "code": "+222", "country": "MauritÃ¢nia", "flag": "ðŸ‡²ðŸ‡·", "mask": "000 000 000" },
-    { "code": "+223", "country": "Mali", "flag": "ðŸ‡²ðŸ‡±", "mask": "00 00 00 00" },
-    { "code": "+224", "country": "GuinÃ©", "flag": "ðŸ‡¬ðŸ‡³", "mask": "000 000 000" },
-    { "code": "+225", "country": "Costa do Marfim", "flag": "ðŸ‡¨ðŸ‡®", "mask": "000 000 000" },
-    { "code": "+226", "country": "Burquina Faso", "flag": "ðŸ‡§ðŸ‡«", "mask": "00 00 00 00" },
-    { "code": "+227", "country": "NÃ­ger", "flag": "ðŸ‡³ðŸ‡ª", "mask": "00 00 00 00" },
-    { "code": "+228", "country": "Togo", "flag": "ðŸ‡¹ðŸ‡¬", "mask": "00 00 00 00" },
-    { "code": "+229", "country": "Benim", "flag": "ðŸ‡§ðŸ‡¯", "mask": "00 00 00 00" },
-    { "code": "+230", "country": "MaurÃ­cia", "flag": "ðŸ‡²ðŸ‡º", "mask": "000 0000" },
-    { "code": "+231", "country": "LibÃ©ria", "flag": "ðŸ‡±ðŸ‡·", "mask": "000 000 000" },
-    { "code": "+232", "country": "Serra Leoa", "flag": "ðŸ‡¸ðŸ‡±", "mask": "000 000 000" },
-    { "code": "+233", "country": "Gana", "flag": "ðŸ‡¬ðŸ‡­", "mask": "000 000 000" },
-    { "code": "+234", "country": "NigÃ©ria", "flag": "ðŸ‡³ðŸ‡¬", "mask": "000 000 0000" },
-    { "code": "+235", "country": "Chade", "flag": "ðŸ‡¹ðŸ‡©", "mask": "00 00 00 00" },
-    { "code": "+236", "country": "RepÃºblica Centro-Africana", "flag": "ðŸ‡¨ðŸ‡«", "mask": "00 00 00 00" },
-    { "code": "+237", "country": "CamarÃµes", "flag": "ðŸ‡¨ðŸ‡²", "mask": "000 000 000" },
-    { "code": "+238", "country": "Cabo Verde", "flag": "ðŸ‡¨ðŸ‡»", "mask": "000 0000" },
-    { "code": "+239", "country": "SÃ£o TomÃ© e PrÃ­ncipe", "flag": "ðŸ‡¸ðŸ‡¹", "mask": "000 0000" },
-    { "code": "+240", "country": "GuinÃ© Equatorial", "flag": "ðŸ‡¬ðŸ‡¶", "mask": "000 000 000" },
-    { "code": "+241", "country": "GabÃ£o", "flag": "ðŸ‡¬ðŸ‡¦", "mask": "000 000 000" },
-    { "code": "+242", "country": "Congo-Brazavile", "flag": "ðŸ‡¨ðŸ‡¬", "mask": "00 000 000" },
-    { "code": "+243", "country": "Congo-Quinxassa", "flag": "ðŸ‡¨ðŸ‡©", "mask": "000 000 000" },
-    { "code": "+244", "country": "Angola", "flag": "ðŸ‡¦ðŸ‡´", "mask": "000 000 000" },
-    { "code": "+245", "country": "GuinÃ©-Bissau", "flag": "ðŸ‡¬ðŸ‡¼", "mask": "000 000 000" },
-    { "code": "+246", "country": "TerritÃ³rio BritÃ¢nico do Oceano Ãndico", "flag": "IO", "mask": "000000000" },
-    { "code": "+247", "country": "AscensÃ£o", "flag": "AC", "mask": "000000" },
-    { "code": "+248", "country": "Seicheles", "flag": "ðŸ‡¸ðŸ‡¨", "mask": "000 0000" },
-    { "code": "+249", "country": "SudÃ£o", "flag": "ðŸ‡¸ðŸ‡©", "mask": "000 000 0000" },
-    { "code": "+250", "country": "Ruanda", "flag": "ðŸ‡·ðŸ‡¼", "mask": "0000 000 000" },
-    { "code": "+251", "country": "EtiÃ³pia", "flag": "ðŸ‡ªðŸ‡¹", "mask": "000 000 000" },
-    { "code": "+252", "country": "SomÃ¡lia", "flag": "ðŸ‡¸ðŸ‡´", "mask": "000 000 000" },
-    { "code": "+253", "country": "Djibuti", "flag": "ðŸ‡©ðŸ‡¯", "mask": "00 00 00 00" },
-    { "code": "+254", "country": "QuÃªnia", "flag": "ðŸ‡°ðŸ‡ª", "mask": "000 000 000" },
-    { "code": "+255", "country": "TanzÃ¢nia", "flag": "ðŸ‡¹ðŸ‡¿", "mask": "000 000 000" },
-    { "code": "+256", "country": "Uganda", "flag": "ðŸ‡ºðŸ‡¬", "mask": "000 000 000" },
-    { "code": "+257", "country": "Burundi", "flag": "ðŸ‡§ðŸ‡®", "mask": "00 00 00 00" },
-    { "code": "+258", "country": "MoÃ§ambique", "flag": "ðŸ‡²ðŸ‡¿", "mask": "000 000 000" },
-    { "code": "+260", "country": "ZÃ¢mbia", "flag": "ðŸ‡¿ðŸ‡²", "mask": "000 000 000" },
-    { "code": "+261", "country": "Madagascar", "flag": "ðŸ‡²ðŸ‡¬", "mask": "00 000 000" },
-    { "code": "+262", "country": "Maiote", "flag": "ðŸ‡¾ðŸ‡¹", "mask": "000 000 000" },
-    { "code": "+262", "country": "ReuniÃ£o", "flag": "ðŸ‡·ðŸ‡ª", "mask": "000 000 000" },
-    { "code": "+263", "country": "ZimbÃ¡bue", "flag": "ðŸ‡¿ðŸ‡¼", "mask": "000 000 000" },
-    { "code": "+264", "country": "NamÃ­bia", "flag": "ðŸ‡³ðŸ‡¦", "mask": "000 000 000" },
-    { "code": "+265", "country": "MalÃ¡ui", "flag": "ðŸ‡²ðŸ‡¼", "mask": "000 000 000" },
-    { "code": "+266", "country": "Lesoto", "flag": "ðŸ‡±ðŸ‡¸", "mask": "000 0000" },
-    { "code": "+267", "country": "Botsuana", "flag": "ðŸ‡§ðŸ‡¼", "mask": "000 0000" },
-    { "code": "+268", "country": "EssuatÃ­ni", "flag": "ðŸ‡¸ðŸ‡¿", "mask": "000 0000" },
-    { "code": "+269", "country": "Comores", "flag": "ðŸ‡°ðŸ‡²", "mask": "000 0000" },
-    { "code": "+27", "country": "Ãfrica do Sul", "flag": "ðŸ‡¿ðŸ‡¦", "mask": "000 000 0000" },
+    { "code": "+213", "country": "Argélia", "flag": "🇩🇿", "mask": "000 00 00 00" },
+    { "code": "+216", "country": "Tunísia", "flag": "🇹🇳", "mask": "00 000 000" },
+    { "code": "+218", "country": "Líbia", "flag": "🇱🇾", "mask": "000 000 0000" },
+    { "code": "+220", "country": "Gâmbia", "flag": "🇬🇲", "mask": "000 000 000" },
+    { "code": "+221", "country": "Senegal", "flag": "🇸🇳", "mask": "000 000 000" },
+    { "code": "+222", "country": "Mauritânia", "flag": "🇲🇷", "mask": "000 000 000" },
+    { "code": "+223", "country": "Mali", "flag": "🇲🇱", "mask": "00 00 00 00" },
+    { "code": "+224", "country": "Guiné", "flag": "🇬🇳", "mask": "000 000 000" },
+    { "code": "+225", "country": "Costa do Marfim", "flag": "🇨🇮", "mask": "000 000 000" },
+    { "code": "+226", "country": "Burquina Faso", "flag": "🇧🇫", "mask": "00 00 00 00" },
+    { "code": "+227", "country": "Níger", "flag": "🇳🇪", "mask": "00 00 00 00" },
+    { "code": "+228", "country": "Togo", "flag": "🇹🇬", "mask": "00 00 00 00" },
+    { "code": "+229", "country": "Benim", "flag": "🇧🇯", "mask": "00 00 00 00" },
+    { "code": "+230", "country": "Maurícia", "flag": "🇲🇺", "mask": "000 0000" },
+    { "code": "+231", "country": "Libéria", "flag": "🇱🇷", "mask": "000 000 000" },
+    { "code": "+232", "country": "Serra Leoa", "flag": "🇸🇱", "mask": "000 000 000" },
+    { "code": "+233", "country": "Gana", "flag": "🇬🇭", "mask": "000 000 000" },
+    { "code": "+234", "country": "Nigéria", "flag": "🇳🇬", "mask": "000 000 0000" },
+    { "code": "+235", "country": "Chade", "flag": "🇹🇩", "mask": "00 00 00 00" },
+    { "code": "+236", "country": "República Centro-Africana", "flag": "🇨🇫", "mask": "00 00 00 00" },
+    { "code": "+237", "country": "Camarões", "flag": "🇨🇲", "mask": "000 000 000" },
+    { "code": "+238", "country": "Cabo Verde", "flag": "🇨🇻", "mask": "000 0000" },
+    { "code": "+239", "country": "São Tomé e Príncipe", "flag": "🇸🇹", "mask": "000 0000" },
+    { "code": "+240", "country": "Guiné Equatorial", "flag": "🇬🇶", "mask": "000 000 000" },
+    { "code": "+241", "country": "Gabão", "flag": "🇬🇦", "mask": "000 000 000" },
+    { "code": "+242", "country": "Congo-Brazavile", "flag": "🇨🇬", "mask": "00 000 000" },
+    { "code": "+243", "country": "Congo-Quinxassa", "flag": "🇨🇩", "mask": "000 000 000" },
+    { "code": "+244", "country": "Angola", "flag": "🇦🇴", "mask": "000 000 000" },
+    { "code": "+245", "country": "Guiné-Bissau", "flag": "🇬🇼", "mask": "000 000 000" },
+    { "code": "+246", "country": "Território Britânico do Oceano Índico", "flag": "IO", "mask": "000000000" },
+    { "code": "+247", "country": "Ascensão", "flag": "AC", "mask": "000000" },
+    { "code": "+248", "country": "Seicheles", "flag": "🇸🇨", "mask": "000 0000" },
+    { "code": "+249", "country": "Sudão", "flag": "🇸🇩", "mask": "000 000 0000" },
+    { "code": "+250", "country": "Ruanda", "flag": "🇷🇼", "mask": "0000 000 000" },
+    { "code": "+251", "country": "Etiópia", "flag": "🇪🇹", "mask": "000 000 000" },
+    { "code": "+252", "country": "Somália", "flag": "🇸🇴", "mask": "000 000 000" },
+    { "code": "+253", "country": "Djibuti", "flag": "🇩🇯", "mask": "00 00 00 00" },
+    { "code": "+254", "country": "Quênia", "flag": "🇰🇪", "mask": "000 000 000" },
+    { "code": "+255", "country": "Tanzânia", "flag": "🇹🇿", "mask": "000 000 000" },
+    { "code": "+256", "country": "Uganda", "flag": "🇺🇬", "mask": "000 000 000" },
+    { "code": "+257", "country": "Burundi", "flag": "🇧🇮", "mask": "00 00 00 00" },
+    { "code": "+258", "country": "Moçambique", "flag": "🇲🇿", "mask": "000 000 000" },
+    { "code": "+260", "country": "Zâmbia", "flag": "🇿🇲", "mask": "000 000 000" },
+    { "code": "+261", "country": "Madagascar", "flag": "🇲🇬", "mask": "00 000 000" },
+    { "code": "+262", "country": "Maiote", "flag": "🇾🇹", "mask": "000 000 000" },
+    { "code": "+262", "country": "Reunião", "flag": "🇷🇪", "mask": "000 000 000" },
+    { "code": "+263", "country": "Zimbábue", "flag": "🇿🇼", "mask": "000 000 000" },
+    { "code": "+264", "country": "Namíbia", "flag": "🇳🇦", "mask": "000 000 000" },
+    { "code": "+265", "country": "Maláui", "flag": "🇲🇼", "mask": "000 000 000" },
+    { "code": "+266", "country": "Lesoto", "flag": "🇱🇸", "mask": "000 0000" },
+    { "code": "+267", "country": "Botsuana", "flag": "🇧🇼", "mask": "000 0000" },
+    { "code": "+268", "country": "Essuatíni", "flag": "🇸🇿", "mask": "000 0000" },
+    { "code": "+269", "country": "Comores", "flag": "🇰🇲", "mask": "000 0000" },
+    { "code": "+27", "country": "África do Sul", "flag": "🇿🇦", "mask": "000 000 0000" },
     { "code": "+290", "country": "Santa Helena", "flag": "SH", "mask": "0000000" },
-    { "code": "+290", "country": "TristÃ£o da Cunha", "flag": "TC", "mask": "0000000" },
-    { "code": "+291", "country": "Eritreia", "flag": "ðŸ‡ªðŸ‡·", "mask": "000 000 000" },
-    { "code": "+297", "country": "Aruba", "flag": "ðŸ‡¦ðŸ‡¼", "mask": "000 0000" },
-    { "code": "+298", "country": "Ilhas FÃ©roe", "flag": "ðŸ‡«ðŸ‡´", "mask": "000 000" },
-    { "code": "+299", "country": "GroenlÃ¢ndia", "flag": "ðŸ‡¬ðŸ‡±", "mask": "000 000" },
-    { "code": "+30", "country": "GrÃ©cia", "flag": "ðŸ‡¬ðŸ‡·", "mask": "000 000 0000" },
-    { "code": "+31", "country": "PaÃ­ses Baixos", "flag": "ðŸ‡³ðŸ‡±", "mask": "00 000 0000" },
-    { "code": "+32", "country": "BÃ©lgica", "flag": "ðŸ‡§ðŸ‡ª", "mask": "000 00 00 00" },
-    { "code": "+33", "country": "FranÃ§a", "flag": "ðŸ‡«ðŸ‡·", "mask": "00 00 00 00 00" },
-    { "code": "+34", "country": "Espanha", "flag": "ðŸ‡ªðŸ‡¸", "mask": "000 000 000" },
+    { "code": "+290", "country": "Tristão da Cunha", "flag": "TC", "mask": "0000000" },
+    { "code": "+291", "country": "Eritreia", "flag": "🇪🇷", "mask": "000 000 000" },
+    { "code": "+297", "country": "Aruba", "flag": "🇦🇼", "mask": "000 0000" },
+    { "code": "+298", "country": "Ilhas Féroe", "flag": "🇫🇴", "mask": "000 000" },
+    { "code": "+299", "country": "Groenlândia", "flag": "🇬🇱", "mask": "000 000" },
+    { "code": "+30", "country": "Grécia", "flag": "🇬🇷", "mask": "000 000 0000" },
+    { "code": "+31", "country": "Países Baixos", "flag": "🇳🇱", "mask": "00 000 0000" },
+    { "code": "+32", "country": "Bélgica", "flag": "🇧🇪", "mask": "000 00 00 00" },
+    { "code": "+33", "country": "França", "flag": "🇫🇷", "mask": "00 00 00 00 00" },
+    { "code": "+34", "country": "Espanha", "flag": "🇪🇸", "mask": "000 000 000" },
     { "code": "+350", "country": "Gibraltar", "flag": "GI", "mask": "000 000" },
-    { "code": "+351", "country": "Portugal", "flag": "ðŸ‡µðŸ‡¹", "mask": "000 000 000" },
-    { "code": "+352", "country": "Luxemburgo", "flag": "ðŸ‡±ðŸ‡º", "mask": "000 00 00 00" },
-    { "code": "+353", "country": "Irlanda", "flag": "ðŸ‡®ðŸ‡ª", "mask": "000 000 0000" },
-    { "code": "+354", "country": "IslÃ¢ndia", "flag": "ðŸ‡®ðŸ‡¸", "mask": "000 0000" },
-    { "code": "+355", "country": "AlbÃ¢nia", "flag": "ðŸ‡¦ðŸ‡±", "mask": "000 000 000" },
-    { "code": "+356", "country": "Malta", "flag": "ðŸ‡²ðŸ‡¹", "mask": "0000 0000" },
-    { "code": "+357", "country": "Chipre", "flag": "ðŸ‡¨ðŸ‡¾", "mask": "00 000 000" },
-    { "code": "+358", "country": "FinlÃ¢ndia", "flag": "ðŸ‡«ðŸ‡®", "mask": "000 000 0000" },
-    { "code": "+359", "country": "BulgÃ¡ria", "flag": "ðŸ‡§ðŸ‡¬", "mask": "000 000 000" },
-    { "code": "+36", "country": "Hungria", "flag": "ðŸ‡­ðŸ‡º", "mask": "00 000 0000" },
-    { "code": "+370", "country": "LituÃ¢nia", "flag": "ðŸ‡±ðŸ‡¹", "mask": "000 000 000" },
-    { "code": "+371", "country": "LetÃ´nia", "flag": "ðŸ‡±ðŸ‡»", "mask": "000 000 000" },
-    { "code": "+372", "country": "EstÃ³nia", "flag": "ðŸ‡ªðŸ‡ª", "mask": "0000 0000" },
-    { "code": "+373", "country": "MoldÃ¡via", "flag": "ðŸ‡²ðŸ‡©", "mask": "000 000 000" },
-    { "code": "+374", "country": "ArmÃªnia", "flag": "ðŸ‡¦ðŸ‡²", "mask": "00 000 000" },
-    { "code": "+375", "country": "BielorrÃºssia", "flag": "ðŸ‡§ðŸ‡¾", "mask": "(000) 000-00-00" },
+    { "code": "+351", "country": "Portugal", "flag": "🇵🇹", "mask": "000 000 000" },
+    { "code": "+352", "country": "Luxemburgo", "flag": "🇱🇺", "mask": "000 00 00 00" },
+    { "code": "+353", "country": "Irlanda", "flag": "🇮🇪", "mask": "000 000 0000" },
+    { "code": "+354", "country": "Islândia", "flag": "🇮🇸", "mask": "000 0000" },
+    { "code": "+355", "country": "Albânia", "flag": "🇦🇱", "mask": "000 000 000" },
+    { "code": "+356", "country": "Malta", "flag": "🇲🇹", "mask": "0000 0000" },
+    { "code": "+357", "country": "Chipre", "flag": "🇨🇾", "mask": "00 000 000" },
+    { "code": "+358", "country": "Finlândia", "flag": "🇫🇮", "mask": "000 000 0000" },
+    { "code": "+359", "country": "Bulgária", "flag": "🇧🇬", "mask": "000 000 000" },
+    { "code": "+36", "country": "Hungria", "flag": "🇭🇺", "mask": "00 000 0000" },
+    { "code": "+370", "country": "Lituânia", "flag": "🇱🇹", "mask": "000 000 000" },
+    { "code": "+371", "country": "Letônia", "flag": "🇱🇻", "mask": "000 000 000" },
+    { "code": "+372", "country": "Estónia", "flag": "🇪🇪", "mask": "0000 0000" },
+    { "code": "+373", "country": "Moldávia", "flag": "🇲🇩", "mask": "000 000 000" },
+    { "code": "+374", "country": "Armênia", "flag": "🇦🇲", "mask": "00 000 000" },
+    { "code": "+375", "country": "Bielorrússia", "flag": "🇧🇾", "mask": "(000) 000-00-00" },
     { "code": "+376", "country": "Andorra", "flag": "AD", "mask": "000 000" },
-    { "code": "+377", "country": "MÃ´naco", "flag": "ðŸ‡²ðŸ‡¨", "mask": "00 000 000" },
-    { "code": "+378", "country": "SÃ£o Marinho", "flag": "ðŸ‡¸ðŸ‡²", "mask": "000 000 000" },
-    { "code": "+379", "country": "Vaticano", "flag": "ðŸ‡»ðŸ‡¦", "mask": "000 000" },
-    { "code": "+380", "country": "UcrÃ¢nia", "flag": "ðŸ‡ºðŸ‡¦", "mask": "00 000 0000" },
-    { "code": "+381", "country": "SÃ©rvia", "flag": "ðŸ‡·ðŸ‡¸", "mask": "00 000 000" },
-    { "code": "+382", "country": "Montenegro", "flag": "ðŸ‡²ðŸ‡ª", "mask": "00 000 000" },
-    { "code": "+383", "country": "Kosovo", "flag": "ðŸ‡½ðŸ‡°", "mask": "000 000 000" },
-    { "code": "+385", "country": "CroÃ¡cia", "flag": "ðŸ‡­ðŸ‡·", "mask": "00 000 000" },
-    { "code": "+386", "country": "EslovÃ©nia", "flag": "ðŸ‡¸ðŸ‡®", "mask": "000 000 000" },
-    { "code": "+387", "country": "BÃ³snia e Herzegovina", "flag": "ðŸ‡§ðŸ‡¦", "mask": "00 000 000" },
-    { "code": "+389", "country": "MacedÃ´nia do Norte", "flag": "ðŸ‡²ðŸ‡°", "mask": "00 000 000" },
-    { "code": "+39", "country": "ItÃ¡lia", "flag": "ðŸ‡®ðŸ‡¹", "mask": "000 000 0000" },
-    { "code": "+40", "country": "RomÃªnia", "flag": "ðŸ‡·ðŸ‡´", "mask": "000 000 000" },
-    { "code": "+41", "country": "SuÃ­Ã§a", "flag": "ðŸ‡¨ðŸ‡­", "mask": "00 000 00 00" },
-    { "code": "+420", "country": "TchÃ©quia", "flag": "ðŸ‡¨ðŸ‡¿", "mask": "000 000 000" },
-    { "code": "+421", "country": "EslovÃ¡quia", "flag": "ðŸ‡¸ðŸ‡°", "mask": "000 000 000" },
+    { "code": "+377", "country": "Mônaco", "flag": "🇲🇨", "mask": "00 000 000" },
+    { "code": "+378", "country": "São Marinho", "flag": "🇸🇲", "mask": "000 000 000" },
+    { "code": "+379", "country": "Vaticano", "flag": "🇻🇦", "mask": "000 000" },
+    { "code": "+380", "country": "Ucrânia", "flag": "🇺🇦", "mask": "00 000 0000" },
+    { "code": "+381", "country": "Sérvia", "flag": "🇷🇸", "mask": "00 000 000" },
+    { "code": "+382", "country": "Montenegro", "flag": "🇲🇪", "mask": "00 000 000" },
+    { "code": "+383", "country": "Kosovo", "flag": "🇽🇰", "mask": "000 000 000" },
+    { "code": "+385", "country": "Croácia", "flag": "🇭🇷", "mask": "00 000 000" },
+    { "code": "+386", "country": "Eslovénia", "flag": "🇸🇮", "mask": "000 000 000" },
+    { "code": "+387", "country": "Bósnia e Herzegovina", "flag": "🇧🇦", "mask": "00 000 000" },
+    { "code": "+389", "country": "Macedônia do Norte", "flag": "🇲🇰", "mask": "00 000 000" },
+    { "code": "+39", "country": "Itália", "flag": "🇮🇹", "mask": "000 000 0000" },
+    { "code": "+40", "country": "Romênia", "flag": "🇷🇴", "mask": "000 000 000" },
+    { "code": "+41", "country": "Suíça", "flag": "🇨🇭", "mask": "00 000 00 00" },
+    { "code": "+420", "country": "Tchéquia", "flag": "🇨🇿", "mask": "000 000 000" },
+    { "code": "+421", "country": "Eslováquia", "flag": "🇸🇰", "mask": "000 000 000" },
     { "code": "+423", "country": "Liechtenstein", "flag": "LI", "mask": "00 000 00 00" },
-    { "code": "+43", "country": "Ãustria", "flag": "ðŸ‡¦ðŸ‡¹", "mask": "000 0000000" },
-    { "code": "+44", "country": "Reino Unido", "flag": "ðŸ‡¬ðŸ‡§", "mask": "0000 000 0000" },
-    { "code": "+45", "country": "Dinamarca", "flag": "ðŸ‡©ðŸ‡°", "mask": "00 00 00 00" },
-    { "code": "+46", "country": "SuÃ©cia", "flag": "ðŸ‡¸ðŸ‡ª", "mask": "00 000 0000" },
-    { "code": "+47", "country": "Noruega", "flag": "ðŸ‡³ðŸ‡´", "mask": "000 00 000" },
-    { "code": "+48", "country": "PolÃ´nia", "flag": "ðŸ‡µðŸ‡±", "mask": "000 000 000" },
-    { "code": "+49", "country": "Alemanha", "flag": "ðŸ‡©ðŸ‡ª", "mask": "0000 000000" },
-    { "code": "+500", "country": "Ilhas Malvinas, GeÃ³rgia do Sul e Sandwich do Sul", "flag": "FK", "mask": "000 0000" },
-    { "code": "+501", "country": "Belize", "flag": "ðŸ‡§ðŸ‡¿", "mask": "000-0000" },
-    { "code": "+502", "country": "Guatemala", "flag": "ðŸ‡¬ðŸ‡¹", "mask": "0000 0000" },
-    { "code": "+503", "country": "El Salvador", "flag": "ðŸ‡¸ðŸ‡»", "mask": "0000 0000" },
-    { "code": "+504", "country": "Honduras", "flag": "ðŸ‡­ðŸ‡³", "mask": "0000 0000" },
-    { "code": "+505", "country": "NicarÃ¡gua", "flag": "ðŸ‡³ðŸ‡®", "mask": "0000 0000" },
-    { "code": "+506", "country": "Costa Rica", "flag": "ðŸ‡¨ðŸ‡·", "mask": "0000 0000" },
-    { "code": "+507", "country": "PanamÃ¡", "flag": "ðŸ‡µðŸ‡¦", "mask": "0000 0000" },
-    { "code": "+508", "country": "SÃ£o Pedro e MiquelÃ£o", "flag": "PM", "mask": "0000 0000" },
-    { "code": "+509", "country": "Haiti", "flag": "ðŸ‡­ðŸ‡¹", "mask": "000 000 0000" },
-    { "code": "+51", "country": "Peru", "flag": "ðŸ‡µðŸ‡ª", "mask": "000 000 000" },
-    { "code": "+52", "country": "MÃ©xico", "flag": "ðŸ‡²ðŸ‡½", "mask": "000 000 0000" },
-    { "code": "+53", "country": "Cuba", "flag": "ðŸ‡¨ðŸ‡º", "mask": "000 0000000" },
-    { "code": "+54", "country": "Argentina", "flag": "ðŸ‡¦ðŸ‡·", "mask": "000 0000-0000" },
-    { "code": "+55", "country": "Brasil", "flag": "ðŸ‡§ðŸ‡·", "mask": "(00) 00000-0000", "selected": true },
-    { "code": "+56", "country": "Chile", "flag": "ðŸ‡¨ðŸ‡±", "mask": "000 000 000" },
-    { "code": "+57", "country": "ColÃ´mbia", "flag": "ðŸ‡¨ðŸ‡´", "mask": "000 000 0000" },
-    { "code": "+58", "country": "Venezuela", "flag": "ðŸ‡»ðŸ‡ª", "mask": "000-0000000" },
-    { "code": "+590", "country": "Guadalupe", "flag": "ðŸ‡¬ðŸ‡µ", "mask": "000 000 000" },
-    { "code": "+590", "country": "SÃ£o Bartolomeu", "flag": "ðŸ‡§ðŸ‡±", "mask": "000 000 000" },
-    { "code": "+590", "country": "SÃ£o Martinho", "flag": "ðŸ‡²ðŸ‡«", "mask": "000 000 000" },
-    { "code": "+591", "country": "BolÃ­via", "flag": "ðŸ‡§ðŸ‡´", "mask": "000 0000" },
-    { "code": "+592", "country": "Guiana", "flag": "ðŸ‡¬ðŸ‡¾", "mask": "000 000 000" },
-    { "code": "+593", "country": "Equador", "flag": "ðŸ‡ªðŸ‡¨", "mask": "000 000 000" },
-    { "code": "+594", "country": "Guiana Francesa", "flag": "ðŸ‡¬ðŸ‡«", "mask": "000 000 000" },
-    { "code": "+595", "country": "Paraguai", "flag": "ðŸ‡µðŸ‡¾", "mask": "000 000 000" },
-    { "code": "+596", "country": "Martinica", "flag": "ðŸ‡²ðŸ‡¶", "mask": "000 000 000" },
-    { "code": "+597", "country": "Suriname", "flag": "ðŸ‡¸ðŸ‡·", "mask": "000 000 000" },
-    { "code": "+598", "country": "Uruguai", "flag": "ðŸ‡ºðŸ‡¾", "mask": "000 000 000" },
+    { "code": "+43", "country": "Áustria", "flag": "🇦🇹", "mask": "000 0000000" },
+    { "code": "+44", "country": "Reino Unido", "flag": "🇬🇧", "mask": "0000 000 0000" },
+    { "code": "+45", "country": "Dinamarca", "flag": "🇩🇰", "mask": "00 00 00 00" },
+    { "code": "+46", "country": "Suécia", "flag": "🇸🇪", "mask": "00 000 0000" },
+    { "code": "+47", "country": "Noruega", "flag": "🇳🇴", "mask": "000 00 000" },
+    { "code": "+48", "country": "Polônia", "flag": "🇵🇱", "mask": "000 000 000" },
+    { "code": "+49", "country": "Alemanha", "flag": "🇩🇪", "mask": "0000 000000" },
+    { "code": "+500", "country": "Ilhas Malvinas, Geórgia do Sul e Sandwich do Sul", "flag": "FK", "mask": "000 0000" },
+    { "code": "+501", "country": "Belize", "flag": "🇧🇿", "mask": "000-0000" },
+    { "code": "+502", "country": "Guatemala", "flag": "🇬🇹", "mask": "0000 0000" },
+    { "code": "+503", "country": "El Salvador", "flag": "🇸🇻", "mask": "0000 0000" },
+    { "code": "+504", "country": "Honduras", "flag": "🇭🇳", "mask": "0000 0000" },
+    { "code": "+505", "country": "Nicarágua", "flag": "🇳🇮", "mask": "0000 0000" },
+    { "code": "+506", "country": "Costa Rica", "flag": "🇨🇷", "mask": "0000 0000" },
+    { "code": "+507", "country": "Panamá", "flag": "🇵🇦", "mask": "0000 0000" },
+    { "code": "+508", "country": "São Pedro e Miquelão", "flag": "PM", "mask": "0000 0000" },
+    { "code": "+509", "country": "Haiti", "flag": "🇭🇹", "mask": "000 000 0000" },
+    { "code": "+51", "country": "Peru", "flag": "🇵🇪", "mask": "000 000 000" },
+    { "code": "+52", "country": "México", "flag": "🇲🇽", "mask": "000 000 0000" },
+    { "code": "+53", "country": "Cuba", "flag": "🇨🇺", "mask": "000 0000000" },
+    { "code": "+54", "country": "Argentina", "flag": "🇦🇷", "mask": "000 0000-0000" },
+    { "code": "+55", "country": "Brasil", "flag": "🇧🇷", "mask": "(00) 00000-0000", "selected": true },
+    { "code": "+56", "country": "Chile", "flag": "🇨🇱", "mask": "000 000 000" },
+    { "code": "+57", "country": "Colômbia", "flag": "🇨🇴", "mask": "000 000 0000" },
+    { "code": "+58", "country": "Venezuela", "flag": "🇻🇪", "mask": "000-0000000" },
+    { "code": "+590", "country": "Guadalupe", "flag": "🇬🇵", "mask": "000 000 000" },
+    { "code": "+590", "country": "São Bartolomeu", "flag": "🇧🇱", "mask": "000 000 000" },
+    { "code": "+590", "country": "São Martinho", "flag": "🇲🇫", "mask": "000 000 000" },
+    { "code": "+591", "country": "Bolívia", "flag": "🇧🇴", "mask": "000 0000" },
+    { "code": "+592", "country": "Guiana", "flag": "🇬🇾", "mask": "000 000 000" },
+    { "code": "+593", "country": "Equador", "flag": "🇪🇨", "mask": "000 000 000" },
+    { "code": "+594", "country": "Guiana Francesa", "flag": "🇬🇫", "mask": "000 000 000" },
+    { "code": "+595", "country": "Paraguai", "flag": "🇵🇾", "mask": "000 000 000" },
+    { "code": "+596", "country": "Martinica", "flag": "🇲🇶", "mask": "000 000 000" },
+    { "code": "+597", "country": "Suriname", "flag": "🇸🇷", "mask": "000 000 000" },
+    { "code": "+598", "country": "Uruguai", "flag": "🇺🇾", "mask": "000 000 000" },
     { "code": "+599", "country": "Bonaire", "flag": "BQ", "mask": "000 000 000" },
-    { "code": "+599", "country": "CuraÃ§ao", "flag": "ðŸ‡¨ðŸ‡¼", "mask": "000 000 000" },
+    { "code": "+599", "country": "Curaçao", "flag": "🇨🇼", "mask": "000 000 000" },
     { "code": "+599", "country": "Saba", "flag": "SA", "mask": "000 000 000" },
-    { "code": "+599", "country": "Santo EustÃ¡quio", "flag": "SE", "mask": "000 000 000" }
+    { "code": "+599", "country": "Santo Eustáquio", "flag": "SE", "mask": "000 000 000" }
   ];
 
   function injectCSS(){
@@ -292,12 +292,11 @@
   }
 
   // ---------------------------------------------------
-  // 2) CLASSE E MÃ‰TODOS
+  // 2) “CLASSE” E MÉTODOS
   // ---------------------------------------------------
-  function FormCreator(config, container){
+  function FormCreator(config){
     injectCSS();
     this.config = config;
-    this.container = container;
     this.pages = [];
     this.currentPage = 0;
     this.landingTime = new Date().toISOString();
@@ -305,14 +304,15 @@
     this.submitTime = null;
     this.trackingParams = this._extractTrackingParams();
     this.maskList = defaultPhoneMasks;
-    console.debug('[FormCreator v'+VERSION+'] instance for "'+ (container.dataset['framerName']||'<inline>') +'" created');
+    console.debug('[FormCreator v'+VERSION+'] instance created');
   }
 
   FormCreator.prototype.init = function(){
-    try {
+    try{
       this._preparePages();
-      this._renderForm();
-      console.info('[FormCreator v'+VERSION+'] initialized for container', this.container);
+      this._initialRender();
+      this._observeContainers();
+      console.info('[FormCreator v'+VERSION+'] initialized');
     } catch(err){
       console.error('[FormCreator v'+VERSION+'] init error', err);
       throw err;
@@ -328,13 +328,48 @@
         this.pages.push(this.config.fields.slice(i, i+per));
       }
     } else {
-      throw new Error('FormCreator: config.pages ou config.fields obrigatÃ³rio');
+      throw new Error('FormCreator: config.pages ou config.fields obrigatório');
     }
     console.debug('[FormCreator v'+VERSION+'] pages prepared ('+this.pages.length+')');
   };
 
-  FormCreator.prototype._renderForm = function(){
-    var container = this.container;
+  FormCreator.prototype._initialRender = function(){
+    var els = document.querySelectorAll('[data-framer-name="FormCreator"]');
+    for (var i=0; i<els.length; i++){
+      this._maybeRender(els[i]);
+    }
+  };
+
+  FormCreator.prototype._observeContainers = function(){
+    var self = this;
+    var mo = new MutationObserver(function(muts){
+      muts.forEach(function(m){
+        m.addedNodes.forEach(function(n){
+          if (n.nodeType===1){
+            if (n.matches('[data-framer-name="FormCreator"]')) self._maybeRender(n);
+            var inner = n.querySelectorAll('[data-framer-name="FormCreator"]');
+            for (var j=0; j<inner.length; j++) self._maybeRender(inner[j]);
+          }
+        });
+      });
+    });
+    mo.observe(document.body, { childList:true, subtree:true });
+    console.debug('[FormCreator v'+VERSION+'] MutationObserver set');
+  };
+
+  FormCreator.prototype._maybeRender = function(container){
+    if (!container.dataset.fcInitialized){
+      try {
+        this._renderForm(container);
+        container.dataset.fcInitialized = '1';
+        console.debug('[FormCreator v'+VERSION+'] rendered container');
+      } catch(err){
+        console.error('[FormCreator v'+VERSION+'] render error', err);
+      }
+    }
+  };
+
+  FormCreator.prototype._renderForm = function(container){
     container.innerHTML = '';
     var wrap = document.createElement('div');
     wrap.className = (this.config.styles && this.config.styles.wrapperClass) || 'form-wrapper';
@@ -356,7 +391,7 @@
     this.overlay = document.createElement('div');
     this.overlay.className = (this.config.overlay && this.config.overlay.className) || 'fc-loading-overlay';
     var os = (this.config.overlay && this.config.overlay.styles) || {};
-    for (var k in os) if (os.hasOwnProperty(k)) this.overlay.style[k] = os[k];
+    for (var k in os) this.overlay.style[k] = os[k];
     parent.appendChild(this.overlay);
   };
 
@@ -384,7 +419,7 @@
     }.bind(this));
     this.form.appendChild(pw);
 
-    // navegaÃ§Ã£o
+    // navegação
     var nav = document.createElement('div');
     nav.className = (this.config.styles && this.config.styles.navWrapperClass) || 'form-navigation';
     var bt = this.config.buttonText || {};
@@ -397,7 +432,7 @@
       nav.appendChild(prev);
     }
     if (idx<this.pages.length-1){
-      var next = this._button(bt.next||'PrÃ³ximo','button',(this.config.styles&&this.config.styles.nextButtonClass));
+      var next = this._button(bt.next||'Próximo','button',(this.config.styles&&this.config.styles.nextButtonClass));
       next.addEventListener('click', function(e){
         e.preventDefault(); this._renderPage(idx+1);
       }.bind(this));
@@ -434,17 +469,10 @@
         opt0.value=''; opt0.textContent=''; opt0.selected=true;
         sel.appendChild(opt0);
       }
-      // novo: clonamos e ordenamos por país em PT-BR
-      var sortedList = this.maskList
-        .slice() // evita mexer no original
-        .sort(function(a, b){
-          return a.country.localeCompare(b.country, 'pt');
-        });
-
-      sortedList.forEach(function(it){
+      this.maskList.forEach(function(it){
         var o = document.createElement('option');
         o.value = it.code.replace('+','');
-        o.textContent = it.country;      
+        o.textContent = it.flag+' '+it.country;
         o.dataset.mask = it.mask;
         sel.appendChild(o);
       });
@@ -568,12 +596,15 @@
     return out;
   };
 
+  // ---------------------------------------------------
+  // 3) _handleSubmit COM DUPLICAÇÃO E FIXES
+  // ---------------------------------------------------
   FormCreator.prototype._handleSubmit = async function(e){
     e.preventDefault();
     this.submitTime = new Date().toISOString();
     this._submitTimeField.value = this.submitTime;
 
-    // validaÃ§Ãµes de telefone
+    // validações de telefone
     var phoneFields = [];
     this.pages.forEach(function(pg){
       pg.forEach(function(f){
@@ -601,12 +632,15 @@
       var digits = val.replace(/\D/g,'');
       if (!digits.startsWith(ddi)) digits = ddi + digits;
       var full = '+' + digits;
+      // 1) phone: +DDI+DDD+número
       rawData[f.id] = full;
+      // 2) phoneac: só o DDD
       var inpEl = this.form.querySelector('[name="'+f.id+'"]');
       var maskPat = inpEl.dataset.mask||'';
       var acLen = (maskPat.match(/0+/)||[''])[0].length;
-      var local = digits.slice(ddi.length);
-      rawData.phoneac = local.slice(0, acLen);
+      var local = digits.slice(ddi.length);       // DDD + número
+      rawData.phoneac = local.slice(0, acLen);   // só DDD
+      // 3) phonenumber: só o número (sem DDI e sem DDD)
       rawData.phonenumber = local.slice(acLen);
       delete rawData[f.id+'_ddi'];
     }.bind(this));
@@ -619,6 +653,7 @@
     queryData[this.config.timeParamName||'fill_start_time'] = this.fillTime;
     queryData.submit_time = this.submitTime;
 
+    // utilitário “?” vs “&”
     function withParams(url, qs){
       return url + (url.indexOf('?') >= 0 ? '&' : '?') + qs;
     }
@@ -658,58 +693,32 @@
   };
 
   FormCreator.prototype._applyStyles = function(el, styles){
-    for (var k in styles) if (styles.hasOwnProperty(k)) el.style[k] = styles[k];
+    for (var k in styles) el.style[k] = styles[k];
   };
 
   // ---------------------------------------------------
-  // 3) GLOBAL BOOTSTRAP PARA MÃšLTIPLAS INSTÃ‚NCIAS
+  // 4) EXPÕE GLOBAL E AUTO-INIT COM RETRY
   // ---------------------------------------------------
   window.FormCreator = FormCreator;
+  console.info('[FormCreator] loaded v'+VERSION);
 
   var MAX_RETRIES = 5, BASE_DELAY = 500, attempts = 0;
-  function initializeAllForms(){
-    if (!window.FormCreatorConfig) return false;
-    var cfgRoot = window.FormCreatorConfig;
-    for (var name in cfgRoot){
-      if (!cfgRoot.hasOwnProperty(name)) continue;
-      var cfg = cfgRoot[name];
-      var selector = '[data-framer-name="'+name+'"]';
-      var els = document.querySelectorAll(selector);
-      els.forEach(function(el){
-        if (!el.dataset.fcInitialized){
-          try {
-            new FormCreator(cfg, el).init();
-            el.dataset.fcInitialized = '1';
-          } catch(err){
-            console.error('[FormCreator] init error for "'+name+'"', err);
-          }
-        }
-      });
-    }
-    return true;
-  }
-
   function tryInit(){
     attempts++;
-    if (initializeAllForms()){
-      console.info('[FormCreator v'+VERSION+'] initialized all forms');
-      // MutationObserver para novos containers dinÃ¢micos
-      var mo = new MutationObserver(function(muts){
-        muts.forEach(function(m){
-          m.addedNodes.forEach(function(n){
-            if (n.nodeType===1){
-              initializeAllForms();
-            }
-          });
-        });
-      });
-      mo.observe(document.body, { childList:true, subtree:true });
-      console.debug('[FormCreator v'+VERSION+'] MutationObserver set');
-    } else if (attempts < MAX_RETRIES){
-      console.warn('[FormCreator v'+VERSION+'] config missing, retry #'+attempts);
-      setTimeout(tryInit, BASE_DELAY * attempts);
+    if (window.FormCreator && window.FormCreatorConfig){
+      console.info('[FormCreator v'+VERSION+'] init attempt '+attempts);
+      try {
+        new FormCreator(window.FormCreatorConfig).init();
+        console.info('[FormCreator v'+VERSION+'] initialized successfully');
+      } catch(err){
+        console.error('[FormCreator v'+VERSION+'] init error', err);
+        if (attempts < MAX_RETRIES) setTimeout(tryInit, BASE_DELAY * attempts);
+        else console.error('[FormCreator v'+VERSION+'] giving up after '+attempts+' attempts');
+      }
     } else {
-      console.error('[FormCreator v'+VERSION+'] giving up after '+attempts+' attempts');
+      console.warn('[FormCreator v'+VERSION+'] config missing, retry #'+attempts);
+      if (attempts < MAX_RETRIES) setTimeout(tryInit, BASE_DELAY * attempts);
+      else console.error('[FormCreator v'+VERSION+'] config never found');
     }
   }
 
