@@ -46,70 +46,6 @@
 
   // JSON completo de mÃ¡scaras
   var defaultPhoneMasks = [
-    { "code": "+7",   "country": "Rússia",                   "flag": "🇷🇺", "mask": "(000) 000-00-00" },
-    { "code": "+7",   "country": "Cazaquistão",             "flag": "🇰🇿", "mask": "(000) 000-00-00" },
-    { "code": "+60",  "country": "Malásia",                  "flag": "🇲🇾", "mask": "000-00000000" },
-    { "code": "+61",  "country": "Austrália",                "flag": "🇦🇺", "mask": "(00) 0000 0000" },
-    { "code": "+62",  "country": "Indonésia",                "flag": "🇮🇩", "mask": "0000-000-0000" },
-    { "code": "+63",  "country": "Filipinas",                "flag": "🇵🇭", "mask": "000-000-0000" },
-    { "code": "+64",  "country": "Nova Zelândia",            "flag": "🇳🇿", "mask": "00 0000 0000" },
-    { "code": "+65",  "country": "Singapura",                "flag": "🇸🇬", "mask": "0000 0000" },
-    { "code": "+66",  "country": "Tailândia",                "flag": "🇹🇭", "mask": "00-000-0000" },
-    { "code": "+670", "country": "Timor-Leste",              "flag": "🇹🇱", "mask": "0000 0000" },
-    { "code": "+672", "country": "Christmas Island",         "flag": "🇨🇽", "mask": "000 0000" },
-    { "code": "+672", "country": "Cocos (Keeling) Islands",  "flag": "🇨🇨", "mask": "000 0000" },
-    { "code": "+672", "country": "Norfolk Island",           "flag": "🇳🇫", "mask": "000 0000" },
-    { "code": "+673", "country": "Brunei",                   "flag": "🇧🇳", "mask": "000-0000" },
-    { "code": "+674", "country": "Nauru",                    "flag": "🇳🇷", "mask": "000-0000" },
-    { "code": "+675", "country": "Papua-Nova Guiné",         "flag": "🇵🇬", "mask": "000 0000" },
-    { "code": "+676", "country": "Tonga",                    "flag": "🇹🇴", "mask": "000 0000" },
-    { "code": "+677", "country": "Ilhas Salomão",            "flag": "🇸🇧", "mask": "000 0000" },
-    { "code": "+678", "country": "Vanuatu",                  "flag": "🇻🇺", "mask": "000 0000" },
-    { "code": "+679", "country": "Fiji",                     "flag": "🇫🇯", "mask": "000 0000" },
-    { "code": "+680", "country": "Palau",                    "flag": "🇵🇼", "mask": "000 0000" },
-    { "code": "+681", "country": "Wallis e Futuna",          "flag": "🇼🇫", "mask": "0000 000" },
-    { "code": "+682", "country": "Ilhas Cook",               "flag": "🇨🇰", "mask": "000 000" },
-    { "code": "+683", "country": "Niue",                     "flag": "🇳🇺", "mask": "000 000" },
-    { "code": "+685", "country": "Samoa",                    "flag": "🇼🇸", "mask": "0000 000" },
-    { "code": "+686", "country": "Kiribati",                 "flag": "🇰🇮", "mask": "0000 000" },
-    { "code": "+687", "country": "Nova Caledônia",           "flag": "🇳🇨", "mask": "0000 0000" },
-    { "code": "+688", "country": "Tuvalu",                   "flag": "🇹🇻", "mask": "0000 000" },
-    { "code": "+689", "country": "Polinésia Francesa",       "flag": "🇵🇫", "mask": "0000 0000" },
-    { "code": "+690", "country": "Tokelau",                  "flag": "🇹🇰", "mask": "000 000" },
-    { "code": "+691", "country": "Micronésia",               "flag": "🇫🇲", "mask": "000 000" },
-    { "code": "+692", "country": "Ilhas Marshall",           "flag": "🇲🇭", "mask": "000 000" },
-    { "code": "+81",  "country": "Japão",                    "flag": "🇯🇵", "mask": "00-0000-0000" },
-    { "code": "+82",  "country": "Coreia do Sul",            "flag": "🇰🇷", "mask": "00-000-0000" },
-    { "code": "+84",  "country": "Vietnã",                   "flag": "🇻🇳", "mask": "000 000 0000" },
-    { "code": "+86",  "country": "China",                    "flag": "🇨🇳", "mask": "0000 0000 000" },
-    { "code": "+850", "country": "Coreia do Norte",          "flag": "🇰🇵", "mask": "000 000 0000" },
-    { "code": "+852", "country": "Hong Kong",                "flag": "🇭🇰", "mask": "0000 0000" },
-    { "code": "+853", "country": "Macau",                    "flag": "🇲🇴", "mask": "0000 0000" },
-    { "code": "+855", "country": "Camboja",                  "flag": "🇰🇭", "mask": "00 000 0000" },
-    { "code": "+856", "country": "Laos",                     "flag": "🇱🇦", "mask": "0000 0000" },
-    { "code": "+880", "country": "Bangladesh",               "flag": "🇧🇩", "mask": "000 000 0000" },
-    { "code": "+886", "country": "Taiwan",                   "flag": "🇹🇼", "mask": "0000-000-000" },
-    { "code": "+90",  "country": "Turquia",                  "flag": "🇹🇷", "mask": "000 000 0000" },
-    { "code": "+91",  "country": "Índia",                    "flag": "🇮🇳", "mask": "00000 00000" },
-    { "code": "+92",  "country": "Paquistão",                "flag": "🇵🇰", "mask": "0000-0000000" },
-    { "code": "+93",  "country": "Afeganistão",              "flag": "🇦🇫", "mask": "00 000 0000" },
-    { "code": "+94",  "country": "Sri Lanka",                "flag": "🇱🇰", "mask": "00 000 0000" },
-    { "code": "+95",  "country": "Mianmar",                  "flag": "🇲🇲", "mask": "000 000 0000" },
-    { "code": "+98",  "country": "Irã",                      "flag": "🇮🇷", "mask": "000 0000 0000" },
-    { "code": "+970", "country": "Palestina",                "flag": "🇵🇸", "mask": "000 000 0000" },
-    { "code": "+971", "country": "Emirados Árabes Unidos",   "flag": "🇦🇪", "mask": "000 000 0000" },
-    { "code": "+972", "country": "Israel",                   "flag": "🇮🇱", "mask": "00-000-0000" },
-    { "code": "+973", "country": "Bahrein",                  "flag": "🇧🇭", "mask": "0000 0000" },
-    { "code": "+974", "country": "Qatar",                    "flag": "🇶🇦", "mask": "0000 0000" },
-    { "code": "+975", "country": "Butão",                    "flag": "🇧🇹", "mask": "0000 0000" },
-    { "code": "+976", "country": "Mongólia",                 "flag": "🇲🇳", "mask": "0000 0000" },
-    { "code": "+977", "country": "Nepal",                    "flag": "🇳🇵", "mask": "000 0000000" },
-    { "code": "+992", "country": "Tajiquistão",              "flag": "🇹🇯", "mask": "000 000 0000" },
-    { "code": "+993", "country": "Turcomenistão",            "flag": "🇹🇲", "mask": "0000 000000" },
-    { "code": "+994", "country": "Azerbaijão",               "flag": "🇦🇿", "mask": "00 000 0000" },
-    { "code": "+995", "country": "Geórgia",                  "flag": "🇬🇪", "mask": "000 000 000" },
-    { "code": "+996", "country": "Quirguistão",              "flag": "🇰🇬", "mask": "000 000 000" },
-    { "code": "+998", "country": "Uzbequistão",              "flag": "🇺🇿", "mask": "000 000 000" },
     { "code": "+1", "country": "Estados Unidos", "flag": "ðŸ‡ºðŸ‡¸", "mask": "(000) 000-0000" },
     { "code": "+1", "country": "CanadÃ¡", "flag": "ðŸ‡¨ðŸ‡¦", "mask": "(000) 000-0000" },
     { "code": "+1", "country": "Anguila", "flag": "ðŸ‡¦ðŸ‡®", "mask": "(000) 000-0000" },
@@ -434,17 +370,10 @@
         opt0.value=''; opt0.textContent=''; opt0.selected=true;
         sel.appendChild(opt0);
       }
-      // novo: clonamos e ordenamos por país em PT-BR
-      var sortedList = this.maskList
-        .slice() // evita mexer no original
-        .sort(function(a, b){
-          return a.country.localeCompare(b.country, 'pt');
-        });
-
-      sortedList.forEach(function(it){
+      this.maskList.forEach(function(it){
         var o = document.createElement('option');
         o.value = it.code.replace('+','');
-        o.textContent = it.country;      
+        o.textContent = it.flag+' '+it.country;
         o.dataset.mask = it.mask;
         sel.appendChild(o);
       });
